@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { withBase } from '@/lib/routes';
+
+const networks = await getCollection('networks');
+---
+
+<ShellLayout title="Networks | Digital Asset Studio">
+  <section class="section">
+    <p class="eyebrow">Networks and vendors</p>
+    <h1>Compare rails, venues, stacks, and market exemplars</h1>
+    <div class="grid two-col">
+      {networks.map((network) => (
+        <article class="card list-card">
+          <span class="pill">{network.data.category}</span>
+          <h3>{network.data.label}</h3>
+          <p>{network.data.summary}</p>
+          <p class="muted">Operating window: {network.data.operatingWindow}</p>
+          <a href={withBase(`/networks/${network.id}/`)}>Open profile</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</ShellLayout>

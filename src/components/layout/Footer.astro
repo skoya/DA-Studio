@@ -1,0 +1,34 @@
+---
+import { withBase } from '@/lib/routes';
+---
+
+<footer class="footer">
+  <div class="surface card">
+    <div class="grid two-col">
+      <div>
+        <p class="eyebrow">Static-first trust surface</p>
+        <p><strong>Repository-backed, source-backed, deterministic</strong></p>
+        <p>
+          Core learning, governance, simulations, and workbench flows run without a backend. AI is optional
+          and never the only path.
+        </p>
+      </div>
+      <div class="tableish">
+        <div class="row">
+          <strong>Key routes</strong>
+          <p>
+            <a href={withBase('/learn/')}>Learn</a> · <a href={withBase('/simulate/')}>Simulate</a> ·{' '}
+            <a href={withBase('/studio/')}>Studio</a> · <a href={withBase('/workspace/')}>Workspace</a>
+          </p>
+        </div>
+        <div class="row">
+          <strong>Trust routes</strong>
+          <p>
+            <a href={withBase('/sources/')}>Sources</a> · <a href={withBase('/releases/')}>Releases</a> ·{' '}
+            <a href={withBase('/markets/')}>Markets</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

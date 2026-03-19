@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { sourceCards } from '@/lib/catalog';
+
+export async function getStaticPaths() {
+  const markets = await getCollection('jurisdictions');
+  return markets.map((market) => ({
+    params: { slug: market.id },
+    props: { market: market.data },
+  }));
+}
+
+const { market } = Astro.props;
+const sources = sourceCards.filter((source) => market.sourceIds.includes(source.id));
+---
+
+<ShellLayout title={`${market.label} | Markets`}>
+  <section class="section split">
+    <div class="surface card">
+      <p class="eyebrow">{market.status}</p>
+      <h1>{market.label}</h1>
+      <p>{market.summary}</p>
+      <div class="meta-row">
+        <span class="badge">Confidence: {market.confidence}</span>
+        <span class="badge">Change status: {market.changeStatus}</span>
+        <span class="badge">Reviewed: {market.lastReviewed}</span>
+      </div>
+      <div class="grid two-col section">
+        <article class="card">
+          <strong>Core topics</strong>
+          <ul>{market.coreTopics.map((topic) => <li>{topic}</li>)}</ul>
+        </article>
+        <article class="card">
+          <strong>Activity map</strong>
+          <ul>{market.activityMap.map((topic) => <li>{topic}</li>)}</ul>
+        </article>
+      </div>
+      <div class="grid two-col">
+        <article class="card">
+          <strong>Control hotspots</strong>
+          <ul>{market.controlHotspots.map((topic) => <li>{topic}</li>)}</ul>
+        </article>
+        <article class="card">
+          <strong>Simulation overlays</strong>
+          <ul>{market.simulationOverlays.map((topic) => <li>{topic}</li>)}</ul>
+        </article>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="surface card">
+        <strong>Default warnings</strong>
+        <ul>{market.defaultWarnings.map((warning) => <li>{warning}</li>)}</ul>
+      </div>
+      <div class="surface card section">
+        <strong>Authorities</strong>
+        <ul>
+          {market.authorities.map((authority) => (
+            <li>
+              {authority.url ? <a href={authority.url}>{authority.name}</a> : authority.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="surface card section">
+        <strong>Sources</strong>
+        <ul>
+          {sources.map((source) => (
+            <li><a href={source.url}>{source.title}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+</ShellLayout>

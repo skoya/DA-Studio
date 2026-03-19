@@ -1,0 +1,17 @@
+---
+import { formatDate, getStaleness } from '@/lib/site';
+import type { SourceCard } from '@/lib/types';
+
+interface Props {
+  source: SourceCard;
+}
+
+const { source } = Astro.props;
+const staleness = getStaleness(source);
+---
+
+<div class="meta-row">
+  <span class="badge">Confidence: {source.confidence}</span>
+  <span class="badge">Reviewed: {formatDate(source.lastReviewed)}</span>
+  <span class="badge">{staleness.label}</span>
+</div>

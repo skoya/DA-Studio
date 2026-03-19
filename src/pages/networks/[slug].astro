@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { sourceCards } from '@/lib/catalog';
+
+export async function getStaticPaths() {
+  const networks = await getCollection('networks');
+  return networks.map((network) => ({
+    params: { slug: network.id },
+    props: { network: network.data },
+  }));
+}
+
+const { network } = Astro.props;
+const sources = sourceCards.filter((source) => network.sourceIds.includes(source.id));
+---
+
+<ShellLayout title={`${network.label} | Networks`}>
+  <section class="section split">
+    <div class="surface card">
+      <p class="eyebrow">{network.category}</p>
+      <h1>{network.label}</h1>
+      <p>{network.summary}</p>
+      <div class="grid two-col">
+        <article class="card">
+          <strong>Participant model</strong>
+          <p>{network.participantModel}</p>
+        </article>
+        <article class="card">
+          <strong>Settlement model</strong>
+          <p>{network.settlementModel}</p>
+        </article>
+      </div>
+      <div class="grid two-col">
+        <article class="card">
+          <strong>Control considerations</strong>
+          <ul>{network.controlConsiderations.map((item) => <li>{item}</li>)}</ul>
+        </article>
+        <article class="card">
+          <strong>Interoperability notes</strong>
+          <ul>{network.interoperabilityNotes.map((item) => <li>{item}</li>)}</ul>
+        </article>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="surface card">
+        <strong>Operating profile</strong>
+        <p>Finality: {network.finalityProfile}</p>
+        <p>Window: {network.operatingWindow}</p>
+        <p>Identity: {network.identityModel}</p>
+      </div>
+      <div class="surface card section">
+        <strong>Sources</strong>
+        <ul>
+          {sources.map((source) => (
+            <li><a href={source.url}>{source.title}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+</ShellLayout>

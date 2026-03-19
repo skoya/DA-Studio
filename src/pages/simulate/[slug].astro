@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import SimulationWorkbench from '@/components/react/SimulationWorkbench';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+
+export async function getStaticPaths() {
+  const simulations = await getCollection('simulations');
+  return simulations.map((simulation) => ({
+    params: { slug: simulation.id },
+    props: { simulation: simulation.data },
+  }));
+}
+
+const { simulation } = Astro.props;
+---
+
+<ShellLayout title={`${simulation.title} | Simulate`}>
+  <section class="section">
+    <SimulationWorkbench client:load scenario={simulation} />
+  </section>
+</ShellLayout>

@@ -1,0 +1,13 @@
+---
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { withBase } from '@/lib/routes';
+---
+
+<ShellLayout title="Not Found | Digital Asset Studio">
+  <section class="section surface card">
+    <p class="eyebrow">404</p>
+    <h1>Page not found</h1>
+    <p>The route does not exist in this release of the studio.</p>
+    <a href={withBase('/')} class="button">Back home</a>
+  </section>
+</ShellLayout>

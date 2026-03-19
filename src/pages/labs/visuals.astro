@@ -1,0 +1,14 @@
+---
+import { HeatmapGrid, NetworkMap, RadarChart, TreeDiagram, WaterfallChart } from '@/components/charts/SvgCharts';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+---
+
+<ShellLayout title="Visual Labs | Digital Asset Studio">
+  <section class="section grid two-col">
+    <RadarChart id="lab-radar" title="Radar" values={[{ label: 'A', value: 60 }, { label: 'B', value: 80 }, { label: 'C', value: 50 }, { label: 'D', value: 70 }]} />
+    <HeatmapGrid id="lab-heatmap" title="Heatmap" rows={['legal', 'ops', 'tech']} columns={['impact', 'certainty']} values={{ 'legal:impact': 5, 'legal:certainty': 4, 'ops:impact': 4, 'ops:certainty': 3, 'tech:impact': 3, 'tech:certainty': 4 }} />
+    <WaterfallChart id="lab-waterfall" title="Waterfall" steps={[{ label: 'Rev', value: 100 }, { label: 'Cost', value: -45 }, { label: 'Ctrl', value: -15 }, { label: 'Net', value: 40 }]} />
+    <TreeDiagram id="lab-tree" title="Tree" nodes={[{ label: 'Root', depth: 0 }, { label: 'Child 1', depth: 1 }, { label: 'Child 2', depth: 1 }, { label: 'Leaf', depth: 2 }]} />
+    <NetworkMap id="lab-network" title="Network" center="Studio" nodes={['Markets', 'Controls', 'Simulate', 'Workspace', 'Sources']} />
+  </section>
+</ShellLayout>

@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { withBase } from '@/lib/routes';
+
+const markets = await getCollection('jurisdictions');
+---
+
+<ShellLayout title="Markets | Digital Asset Studio">
+  <section class="section">
+    <p class="eyebrow">Markets</p>
+    <h1>Jurisdiction packs with confidence and change status</h1>
+    <div class="grid two-col">
+      {markets.map((market) => (
+        <article class="card list-card">
+          <span class="pill">{market.data.status}</span>
+          <h3>{market.data.label}</h3>
+          <p>{market.data.summary}</p>
+          <div class="meta-row">
+            <span class="badge">Confidence: {market.data.confidence}</span>
+            <span class="badge">Status: {market.data.changeStatus}</span>
+          </div>
+          <a href={withBase(`/markets/${market.id}/`)}>Open pack</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</ShellLayout>

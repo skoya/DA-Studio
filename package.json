@@ -1,17 +1,61 @@
 {
-  "name": "gullible-galaxy",
+  "name": "digital-asset-studio",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "private": true,
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "dev": "astro dev --host",
+    "build": "pnpm content:graph && astro build && pagefind --site dist",
+    "preview": "astro preview --host",
+    "typecheck": "astro check && tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "e2e:install": "playwright install --with-deps",
+    "e2e:prepare": "rm -rf dist-root dist-basepath node_modules/.astro-e2e-root node_modules/.astro-e2e-base && PUBLIC_BASE_PATH=/ PUBLIC_ASTRO_CACHE_DIR=./node_modules/.astro-e2e-root pnpm exec astro build --force --outDir dist-root && pagefind --site dist-root && PUBLIC_BASE_PATH=/da-studio/ PUBLIC_ASTRO_CACHE_DIR=./node_modules/.astro-e2e-base pnpm exec astro build --force --outDir dist-basepath && pagefind --site dist-basepath",
+    "e2e:serve": "pnpm e2e:prepare && node scripts/serve-e2e.mjs",
+    "e2e": "playwright test",
+    "e2e:ci": "playwright test --reporter=line,html",
+    "verify:fast": "pnpm content:validate && pnpm typecheck && pnpm test",
+    "verify:ci": "pnpm content:validate && pnpm sources:check && pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm e2e:ci",
+    "content:validate": "tsx scripts/validate-content.ts",
+    "content:graph": "tsx scripts/build-graph.ts",
+    "sources:check": "tsx scripts/check-sources.ts",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.0.6"
+    "@astrojs/mdx": "^5.0.2",
+    "@astrojs/react": "^5.0.1",
+    "astro": "^6.0.6",
+    "clsx": "^2.1.1",
+    "dexie": "^4.3.0",
+    "pagefind": "^1.4.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@axe-core/playwright": "^4.11.1",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.58.2",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "astro-eslint-parser": "^1.3.0",
+    "eslint": "^10.0.3",
+    "eslint-plugin-astro": "^1.6.0",
+    "jsdom": "^29.0.0",
+    "sharp": "^0.34.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.1",
+    "vitest": "^4.1.0"
   }
 }

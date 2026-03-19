@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { withBase } from '@/lib/routes';
+
+const controls = await getCollection('controls');
+---
+
+<ShellLayout title="Controls | Digital Asset Studio">
+  <section class="section">
+    <p class="eyebrow">Control library</p>
+    <h1>Deterministic control library linked to rules and simulations</h1>
+    <div class="grid two-col">
+      {controls.map((control) => (
+        <article class="card list-card">
+          <span class="pill">{control.data.domain}</span>
+          <h3>{control.data.title}</h3>
+          <p>{control.data.objective}</p>
+          <a href={withBase(`/controls/${control.id}/`)}>Open control</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</ShellLayout>

@@ -1,0 +1,32 @@
+---
+import { withBase } from '@/lib/routes';
+
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/start/', label: 'Start' },
+  { href: '/learn/', label: 'Learn' },
+  { href: '/markets/', label: 'Markets' },
+  { href: '/networks/', label: 'Networks' },
+  { href: '/controls/', label: 'Controls' },
+  { href: '/simulate/', label: 'Simulate' },
+  { href: '/studio/', label: 'Studio' },
+  { href: '/workspace/', label: 'Workspace' },
+  { href: '/sources/', label: 'Sources' },
+  { href: '/releases/', label: 'Releases' },
+];
+---
+
+<div class="nav-shell">
+  <div class="surface topnav">
+    <a href={withBase('/')} class="kicker"><strong>DA</strong> Studio</a>
+    <nav aria-label="Primary">
+      {links.map((link) => (
+        <a href={withBase(link.href)} aria-current={currentPath === withBase(link.href) ? 'page' : undefined}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+---
+import WorkbenchApp from '@/components/react/WorkbenchApp';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+---
+
+<ShellLayout title="FVD | Digital Asset Studio">
+  <section class="section">
+    <WorkbenchApp client:load view="fvd" />
+  </section>
+</ShellLayout>

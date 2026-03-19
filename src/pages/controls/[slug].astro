@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { sourceCards } from '@/lib/catalog';
+
+export async function getStaticPaths() {
+  const controls = await getCollection('controls');
+  return controls.map((control) => ({
+    params: { slug: control.id },
+    props: { control: control.data },
+  }));
+}
+
+const { control } = Astro.props;
+const sources = sourceCards.filter((source) => control.sourceIds.includes(source.id));
+---
+
+<ShellLayout title={`${control.title} | Controls`}>
+  <section class="section split">
+    <div class="surface card">
+      <p class="eyebrow">{control.domain}</p>
+      <h1>{control.title}</h1>
+      <p>{control.objective}</p>
+      <div class="grid two-col">
+        <article class="card">
+          <strong>Why it matters</strong>
+          <p>{control.whyItMatters}</p>
+        </article>
+        <article class="card">
+          <strong>Evidence examples</strong>
+          <ul>{control.evidenceExamples.map((item) => <li>{item}</li>)}</ul>
+        </article>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="surface card">
+        <strong>Applies when</strong>
+        <ul>{control.appliesWhen.map((item) => <li>{item}</li>)}</ul>
+      </div>
+      <div class="surface card section">
+        <strong>Owner hints</strong>
+        <ul>{control.ownerHints.map((item) => <li>{item}</li>)}</ul>
+      </div>
+      <div class="surface card section">
+        <strong>Sources</strong>
+        <ul>{sources.map((source) => <li><a href={source.url}>{source.title}</a></li>)}</ul>
+      </div>
+    </div>
+  </section>
+</ShellLayout>

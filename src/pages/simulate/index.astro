@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { withBase } from '@/lib/routes';
+
+const simulations = await getCollection('simulations');
+---
+
+<ShellLayout title="Simulate | Digital Asset Studio">
+  <section class="section">
+    <p class="eyebrow">Simulate</p>
+    <h1>Six deep operational simulations with exception branches and exports</h1>
+    <div class="grid two-col">
+      {simulations.map((simulation) => (
+        <article class="card list-card">
+          <span class="pill">{simulation.data.assetFamily}</span>
+          <h3>{simulation.data.title}</h3>
+          <p>{simulation.data.summary}</p>
+          <p class="muted">Branches: {simulation.data.branches.length} · Actors: {simulation.data.actors.length}</p>
+          <a href={withBase(`/simulate/${simulation.id}/`)}>Run simulation</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</ShellLayout>

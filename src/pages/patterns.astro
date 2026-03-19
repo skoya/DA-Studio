@@ -1,0 +1,21 @@
+---
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { patterns } from '@/lib/catalog';
+---
+
+<ShellLayout title="Patterns | Digital Asset Studio">
+  <section class="section">
+    <p class="eyebrow">Patterns</p>
+    <h1>Comparable market and operating-model patterns</h1>
+    <div class="grid two-col">
+      {patterns.map((pattern) => (
+        <article class="card" id={pattern.id}>
+          <span class="pill">{pattern.assetFamily}</span>
+          <h3>{pattern.title}</h3>
+          <p>{pattern.summary}</p>
+          <p class="muted">Hotspots: {pattern.controlHotspots.join(', ')}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</ShellLayout>

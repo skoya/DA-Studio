@@ -1,0 +1,28 @@
+---
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { withBase } from '@/lib/routes';
+---
+
+<ShellLayout title="Start Here | Digital Asset Studio">
+  <section class="section">
+    <p class="eyebrow">Start modes</p>
+    <h1>Start here</h1>
+    <div class="grid three-col">
+      <article class="card list-card">
+        <h2>I am new to this</h2>
+        <p>Use the learn section, glossary-linked concepts, and curated journeys.</p>
+        <a href={withBase('/learn/')}>Open Learn</a>
+      </article>
+      <article class="card list-card">
+        <h2>I need to answer a client or stakeholder question</h2>
+        <p>Use context-aware reading routes, compare market packs, and save notes locally.</p>
+        <a href={withBase('/markets/')}>Open Markets</a>
+      </article>
+      <article class="card list-card">
+        <h2>I want to design or assess a product idea</h2>
+        <p>Open the strategy workbench, decision pack, and business-model simulator.</p>
+        <a href={withBase('/studio/')}>Open Studio</a>
+      </article>
+    </div>
+  </section>
+</ShellLayout>

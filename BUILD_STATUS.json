@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "ready": true,
+  "phase": "first-release",
+  "completion": 100,
+  "lastUpdated": "2026-03-19T08:10:00Z",
+  "areas": {
+    "shell": "complete",
+    "content-model": "complete",
+    "learn": "complete",
+    "markets": "complete",
+    "controls": "complete",
+    "simulations": "complete",
+    "strategy-workbench": "complete",
+    "business-model-simulator": "complete",
+    "workspace": "complete",
+    "search": "complete",
+    "tests": "complete",
+    "gitlab-pages": "complete",
+    "upgrade-engine": "complete",
+    "docs": "complete"
+  },
+  "openRisks": [],
+  "notes": [
+    "Static Astro + TypeScript application is implemented for root-path and GitLab Pages project-path deployments.",
+    "Typed content collections, deterministic rules, workspace migrations, strategy workbench, business model simulator, and source freshness UX are live.",
+    "verify:ci passed on 2026-03-19 after lint, unit tests, static build, and Playwright route/workflow/base-path coverage."
+  ]
+}

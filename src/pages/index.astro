@@ -1,11 +1,80 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import searchIndex from '@/data/generated/search-index.json';
+import SearchPanel from '@/components/react/SearchPanel';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { journeys, jurisdictionPacks, networkProfiles, simulations } from '@/lib/catalog';
+import { withBase } from '@/lib/routes';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<ShellLayout title="Digital Asset Studio" description="Static-first digital-asset learning, simulation, governance, and strategy workbench.">
+  <section class="hero section">
+    <div class="hero-panel">
+      <span class="kicker">Static-first. Source-backed. Control-first.</span>
+      <h1>Digital Asset Studio for serious financial-services exploration</h1>
+      <p>
+        Learn the concepts, compare market patterns, run deep simulations, govern decisions with deterministic
+        rules, build strategy packs, and pressure-test economics without a required backend.
+      </p>
+      <div class="meta-row">
+        <a href={withBase('/start/')} class="button">Start here</a>
+        <a href={withBase('/simulate/')} class="button secondary">Explore simulations</a>
+        <a href={withBase('/studio/')} class="button secondary">Open the workbench</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <p class="eyebrow">Release posture</p>
+      <div class="stat">
+        <span>Major routes</span>
+        <strong>9</strong>
+      </div>
+      <div class="stat">
+        <span>Deep simulations</span>
+        <strong>{simulations.length}</strong>
+      </div>
+      <div class="stat">
+        <span>Jurisdiction packs</span>
+        <strong>{jurisdictionPacks.length}</strong>
+      </div>
+      <div class="stat">
+        <span>Named network profiles</span>
+        <strong>{networkProfiles.length}</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <SearchPanel client:load items={searchIndex} />
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Featured journeys</p>
+    <div class="grid three-col">
+      {journeys.map((journey) => (
+        <article class="card list-card">
+          <span class="pill">{journey.audience.join(' / ')}</span>
+          <h3>{journey.title}</h3>
+          <p>{journey.summary}</p>
+          <a href={withBase(journey.stops[0]?.href ?? '/start/')}>Open journey</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Product areas</p>
+    <div class="grid three-col">
+      <article class="card">
+        <h3>Learn</h3>
+        <p>Concept pages with plain, practitioner, and expert depth plus related controls and sources.</p>
+      </article>
+      <article class="card">
+        <h3>Markets and controls</h3>
+        <p>Jurisdiction packs, trust metadata, and deterministic governance overlays.</p>
+      </article>
+      <article class="card">
+        <h3>Simulate, studio, workspace</h3>
+        <p>Operational simulation, strategy tools, business-model testing, and local persistence with migrations.</p>
+      </article>
+    </div>
+  </section>
+</ShellLayout>

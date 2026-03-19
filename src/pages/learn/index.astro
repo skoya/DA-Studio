@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { withBase } from '@/lib/routes';
+
+const concepts = await getCollection('concepts');
+const glossary = await getCollection('glossary');
+---
+
+<ShellLayout title="Learn | Digital Asset Studio">
+  <section class="section">
+    <p class="eyebrow">Learn</p>
+    <h1>Concepts with layered depth and source-backed links</h1>
+    <div class="grid two-col">
+      {concepts.map((concept) => (
+        <article class="card list-card">
+          <span class="pill">Reviewed {concept.data.lastReviewed}</span>
+          <h3>{concept.data.title}</h3>
+          <p>{concept.data.summary}</p>
+          <a href={withBase(`/learn/${concept.id}/`)}>Read concept</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Glossary</p>
+    <div class="grid three-col">
+      {glossary.map((term) => (
+        <article class="card" id={`glossary-${term.id}`}>
+          <h3>{term.data.term}</h3>
+          <p>{term.data.shortDefinition}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</ShellLayout>

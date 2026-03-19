@@ -1,0 +1,1081 @@
+[
+  {
+    "id": "native-crypto-exposure",
+    "type": "concept",
+    "label": "Native crypto exposure",
+    "href": "/learn/native-crypto-exposure/",
+    "summary": "How direct crypto holdings differ from wrappers such as funds, ETPs, or structured notes.",
+    "keywords": [
+      "concept",
+      "ctl-suitability",
+      "ctl-custody-segregation",
+      "ctl-travel-rule",
+      "native-crypto-lifecycle",
+      "delegated-custody-model",
+      "travel-rule",
+      "segregation",
+      "cold-storage",
+      "finma-guidance-01-2026",
+      "fatf-vasp-2025",
+      "sec-crypto-2026"
+    ]
+  },
+  {
+    "id": "tokenized-funds",
+    "type": "concept",
+    "label": "Tokenized funds",
+    "href": "/learn/tokenized-funds/",
+    "summary": "Fund units represented through tokenized issuance, transfer, and servicing mechanics.",
+    "keywords": [
+      "concept",
+      "ctl-investor-eligibility",
+      "ctl-nav-governance",
+      "ctl-reconciliation",
+      "tokenized-fund-subscription",
+      "tokenized-mmf-distribution",
+      "nav",
+      "whitelisting",
+      "reconciliation",
+      "mas-project-guardian",
+      "ubs-tokenize",
+      "chainlink-dta"
+    ]
+  },
+  {
+    "id": "tokenized-bonds",
+    "type": "concept",
+    "label": "Tokenized bonds and notes",
+    "href": "/learn/tokenized-bonds/",
+    "summary": "How issuance, settlement, safekeeping, and corporate actions change when debt instruments are tokenized.",
+    "keywords": [
+      "concept",
+      "ctl-legal-perimeter",
+      "ctl-corporate-actions",
+      "ctl-reconciliation",
+      "tokenized-bond-issuance",
+      "regulated-dlt-bond-issuance",
+      "dvp",
+      "finality",
+      "segregation",
+      "boe-dss",
+      "sdx-official",
+      "ubs-tokenize"
+    ]
+  },
+  {
+    "id": "tokenized-cash",
+    "type": "concept",
+    "label": "Stablecoins, tokenized cash, and tokenized deposits",
+    "href": "/learn/tokenized-cash/",
+    "summary": "Comparing settlement assets used in treasury, payments, and DvP or PvP designs.",
+    "keywords": [
+      "concept",
+      "ctl-liquidity-prefunding",
+      "ctl-screening",
+      "ctl-concentration",
+      "tokenized-cash-payments",
+      "tokenized-cash-settlement",
+      "stablecoin",
+      "tokenized-deposit",
+      "pvp",
+      "mas-stablecoin",
+      "hkma-stablecoin",
+      "esma-mica",
+      "kinexys-digital-payments"
+    ]
+  },
+  {
+    "id": "custody-governance",
+    "type": "concept",
+    "label": "Custody and key governance",
+    "href": "/learn/custody-governance/",
+    "summary": "Why custody design is usually the decisive control question in institutional digital-asset work.",
+    "keywords": [
+      "concept",
+      "ctl-custody-segregation",
+      "ctl-incident-response",
+      "ctl-outsourcing",
+      "native-crypto-lifecycle",
+      "repo-collateral-mobilization",
+      "delegated-custody-model",
+      "family-office-governance-wrapper",
+      "segregation",
+      "cold-storage",
+      "finma-guidance-01-2026",
+      "nist-csf-2"
+    ]
+  },
+  {
+    "id": "wealth-planning",
+    "type": "concept",
+    "label": "Wealth planning and family office overlays",
+    "href": "/learn/wealth-planning/",
+    "summary": "How digital-asset products change when trust structures, succession, governance, and recovery are in scope.",
+    "keywords": [
+      "concept",
+      "ctl-wealth-governance",
+      "ctl-custody-segregation",
+      "structured-product-lifecycle",
+      "family-office-governance-wrapper",
+      "segregation",
+      "reconciliation",
+      "finma-guidance-01-2026",
+      "ubs-tokenize"
+    ]
+  },
+  {
+    "id": "ctl-suitability",
+    "type": "control",
+    "label": "Assess product fit and disclosure burden",
+    "href": "/controls/ctl-suitability/",
+    "summary": "Ensure the selected product is appropriate for the target segment and that core cautions are evidenced.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-custody-segregation",
+    "type": "control",
+    "label": "Evidence segregation and delegated-custody boundaries",
+    "href": "/controls/ctl-custody-segregation/",
+    "summary": "Show who controls assets, where they sit, and how client and house assets are separated.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-travel-rule",
+    "type": "control",
+    "label": "Apply transfer screening and Travel Rule checks",
+    "href": "/controls/ctl-travel-rule/",
+    "summary": "Ensure outbound and inbound transfer workflows include screening and data-sharing controls when required.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-investor-eligibility",
+    "type": "control",
+    "label": "Verify investor eligibility and class restrictions",
+    "href": "/controls/ctl-investor-eligibility/",
+    "summary": "Prevent subscriptions and transfers that violate class, jurisdiction, or target-investor limits.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-nav-governance",
+    "type": "control",
+    "label": "Govern NAV, pricing, and stale-data handling",
+    "href": "/controls/ctl-nav-governance/",
+    "summary": "Ensure mint, burn, fee, and reporting flows depend on an explicit pricing and stale-data policy.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-reconciliation",
+    "type": "control",
+    "label": "Reconcile on-chain and off-chain records",
+    "href": "/controls/ctl-reconciliation/",
+    "summary": "Maintain a defined source-of-truth policy and mismatch escalation for tokenized workflows.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-corporate-actions",
+    "type": "control",
+    "label": "Govern coupons, record dates, and servicing exceptions",
+    "href": "/controls/ctl-corporate-actions/",
+    "summary": "Ensure lifecycle events such as coupons, calls, or maturity payments are aligned to records and investor communications.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-screening",
+    "type": "control",
+    "label": "Apply sanctions and counterparty screening",
+    "href": "/controls/ctl-screening/",
+    "summary": "Run and evidence sanctions, AML, and counterparty screens before sensitive transfers and settlements.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-legal-perimeter",
+    "type": "control",
+    "label": "Map the legal wrapper and perimeter before launch",
+    "href": "/controls/ctl-legal-perimeter/",
+    "summary": "Force explicit classification and launch-review checkpoints where product perimeter is uncertain.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-liquidity-prefunding",
+    "type": "control",
+    "label": "Model prefunding, liquidity, and intraday limits",
+    "href": "/controls/ctl-liquidity-prefunding/",
+    "summary": "Show how the chosen settlement asset and rail affect funding, limits, and failure handling.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-concentration",
+    "type": "control",
+    "label": "Assess issuer, vendor, and venue concentration",
+    "href": "/controls/ctl-concentration/",
+    "summary": "Make dependency concentration visible when a product depends heavily on one provider or rail.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-incident-response",
+    "type": "control",
+    "label": "Prepare incident communication and recovery playbooks",
+    "href": "/controls/ctl-incident-response/",
+    "summary": "Ensure key compromise, outage, sanctions alerts, and data mismatches have explicit response paths.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-wealth-governance",
+    "type": "control",
+    "label": "Evidence authority, succession, and recovery for complex holdings",
+    "href": "/controls/ctl-wealth-governance/",
+    "summary": "Support family-office and UHNW workflows with explicit governance and continuity controls.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ctl-outsourcing",
+    "type": "control",
+    "label": "Govern delegated operators and sub-custodians",
+    "href": "/controls/ctl-outsourcing/",
+    "summary": "Define oversight, reporting, and fallback expectations for external operators.",
+    "keywords": [
+      "control"
+    ]
+  },
+  {
+    "id": "ch",
+    "type": "jurisdiction",
+    "label": "Switzerland",
+    "href": "/markets/ch/",
+    "summary": "High-confidence market pack for custody, DLT venue, and institutional tokenization patterns.",
+    "keywords": [
+      "jurisdiction",
+      "finma-guidance-01-2026",
+      "sdx-official"
+    ]
+  },
+  {
+    "id": "eu",
+    "type": "jurisdiction",
+    "label": "European Union",
+    "href": "/markets/eu/",
+    "summary": "Deep pack for MiCA and DORA overlays across custody, service roles, and resilience.",
+    "keywords": [
+      "jurisdiction",
+      "esma-mica",
+      "eu-dora"
+    ]
+  },
+  {
+    "id": "uk",
+    "type": "jurisdiction",
+    "label": "United Kingdom",
+    "href": "/markets/uk/",
+    "summary": "Deep pack for DSS boundaries and future-crypto-regime caution.",
+    "keywords": [
+      "jurisdiction",
+      "boe-dss",
+      "fca-future-crypto"
+    ]
+  },
+  {
+    "id": "sg",
+    "type": "jurisdiction",
+    "label": "Singapore",
+    "href": "/markets/sg/",
+    "summary": "Deep pack for tokenized funds, institutional tokenization, and stablecoin comparisons.",
+    "keywords": [
+      "jurisdiction",
+      "mas-project-guardian",
+      "mas-stablecoin"
+    ]
+  },
+  {
+    "id": "hk",
+    "type": "jurisdiction",
+    "label": "Hong Kong",
+    "href": "/markets/hk/",
+    "summary": "Deep pack for virtual-asset roadmap and fiat-referenced token perimeter.",
+    "keywords": [
+      "jurisdiction",
+      "sfc-aspire",
+      "hkma-stablecoin"
+    ]
+  },
+  {
+    "id": "us",
+    "type": "jurisdiction",
+    "label": "United States",
+    "href": "/markets/us/",
+    "summary": "Commercially unavoidable market with significant ongoing interpretive and launch-review complexity.",
+    "keywords": [
+      "jurisdiction",
+      "sec-crypto-2026"
+    ]
+  },
+  {
+    "id": "adgm",
+    "type": "jurisdiction",
+    "label": "UAE / ADGM",
+    "href": "/markets/adgm/",
+    "summary": "Regional reference market for regulated digital-asset and fiat-referenced-token structuring.",
+    "keywords": [
+      "jurisdiction",
+      "adgm-frt"
+    ]
+  },
+  {
+    "id": "jp",
+    "type": "jurisdiction",
+    "label": "Japan",
+    "href": "/markets/jp/",
+    "summary": "Cautious APAC reference pack for stablecoin and crypto-asset regulatory framing.",
+    "keywords": [
+      "jurisdiction",
+      "japan-fsa-2025"
+    ]
+  },
+  {
+    "id": "public-chain-pattern",
+    "type": "network",
+    "label": "Public-chain pattern",
+    "href": "/networks/public-chain-pattern/",
+    "summary": "Generic pattern for open networks with public validation and variable confidentiality controls.",
+    "keywords": [
+      "network"
+    ]
+  },
+  {
+    "id": "permissioned-chain-pattern",
+    "type": "network",
+    "label": "Permissioned-chain pattern",
+    "href": "/networks/permissioned-chain-pattern/",
+    "summary": "Generic pattern for whitelisted participant sets and controlled data sharing.",
+    "keywords": [
+      "network"
+    ]
+  },
+  {
+    "id": "sdx",
+    "type": "network",
+    "label": "SDX",
+    "href": "/networks/sdx/",
+    "summary": "Reference point for a regulated DLT venue and settlement environment.",
+    "keywords": [
+      "network"
+    ]
+  },
+  {
+    "id": "kinexys",
+    "type": "network",
+    "label": "Kinexys Digital Payments",
+    "href": "/networks/kinexys/",
+    "summary": "Reference pattern for bank-run digital settlement and treasury use cases.",
+    "keywords": [
+      "network"
+    ]
+  },
+  {
+    "id": "ubs-tokenize-network",
+    "type": "network",
+    "label": "UBS Tokenize",
+    "href": "/networks/ubs-tokenize-network/",
+    "summary": "Market exemplar for bank-led tokenization across multiple product families.",
+    "keywords": [
+      "network"
+    ]
+  },
+  {
+    "id": "chainlink-dta-network",
+    "type": "network",
+    "label": "Chainlink DTA",
+    "href": "/networks/chainlink-dta-network/",
+    "summary": "Reference pattern for tokenized fund data synchronization and transfer-agent style workflows.",
+    "keywords": [
+      "network"
+    ]
+  },
+  {
+    "id": "sg-forge",
+    "type": "network",
+    "label": "SG-FORGE CoinVertible",
+    "href": "/networks/sg-forge/",
+    "summary": "Reference point for regulated stablecoin and tokenized cash discussions.",
+    "keywords": [
+      "network"
+    ]
+  },
+  {
+    "id": "digift",
+    "type": "network",
+    "label": "DigiFT",
+    "href": "/networks/digift/",
+    "summary": "Reference point for venue-mediated tokenized fund and asset access.",
+    "keywords": [
+      "network"
+    ]
+  },
+  {
+    "id": "tokenized-mmf-distribution",
+    "type": "pattern",
+    "label": "Tokenized money market fund distribution",
+    "href": "/patterns/#tokenized-mmf-distribution",
+    "summary": "Controlled distribution, wallet whitelisting, NAV-driven mint and burn, and synchronized records.",
+    "keywords": [
+      "pattern"
+    ]
+  },
+  {
+    "id": "regulated-dlt-bond-issuance",
+    "type": "pattern",
+    "label": "Tokenized bond issuance on regulated or controlled venue",
+    "href": "/patterns/#regulated-dlt-bond-issuance",
+    "summary": "Documentation, issuance, DvP settlement, safekeeping, and servicing across a controlled market-infrastructure model.",
+    "keywords": [
+      "pattern"
+    ]
+  },
+  {
+    "id": "tokenized-cash-settlement",
+    "type": "pattern",
+    "label": "Tokenized cash settlement",
+    "href": "/patterns/#tokenized-cash-settlement",
+    "summary": "Treasury, settlement, and cross-border movement using stablecoins, tokenized deposits, or bank rails.",
+    "keywords": [
+      "pattern"
+    ]
+  },
+  {
+    "id": "delegated-custody-model",
+    "type": "pattern",
+    "label": "Delegated custody and transfer-control model",
+    "href": "/patterns/#delegated-custody-model",
+    "summary": "Institutional custody with segregation, approvals, delegated operation, and incident response.",
+    "keywords": [
+      "pattern"
+    ]
+  },
+  {
+    "id": "family-office-governance-wrapper",
+    "type": "pattern",
+    "label": "Family office governance wrapper",
+    "href": "/patterns/#family-office-governance-wrapper",
+    "summary": "Holding through trust, company, or foundation structures with explicit signatory and recovery logic.",
+    "keywords": [
+      "pattern"
+    ]
+  },
+  {
+    "id": "repo-collateral-pattern",
+    "type": "pattern",
+    "label": "Repo and collateral mobilization",
+    "href": "/patterns/#repo-collateral-pattern",
+    "summary": "Use of digital assets or tokenized securities as collateral with valuation, margin, and unwind discipline.",
+    "keywords": [
+      "pattern"
+    ]
+  },
+  {
+    "id": "native-crypto-lifecycle",
+    "type": "simulation",
+    "label": "Native crypto onboarding, custody, transfer, and reporting",
+    "href": "/simulate/native-crypto-lifecycle/",
+    "summary": "Direct crypto lifecycle with suitability, onboarding, trading, safekeeping, transfer, and reporting branches.",
+    "keywords": [
+      "simulation",
+      "finma-guidance-01-2026",
+      "fatf-vasp-2025",
+      "sec-crypto-2026",
+      "ctl-suitability",
+      "ctl-wealth-governance",
+      "ctl-suitability",
+      "ctl-legal-perimeter",
+      "ctl-travel-rule",
+      "ctl-custody-segregation",
+      "ctl-reconciliation",
+      "ctl-custody-segregation",
+      "ctl-outsourcing",
+      "ctl-travel-rule",
+      "ctl-incident-response",
+      "ctl-reconciliation"
+    ]
+  },
+  {
+    "id": "tokenized-fund-subscription",
+    "type": "simulation",
+    "label": "Tokenized money market fund subscription and redemption",
+    "href": "/simulate/tokenized-fund-subscription/",
+    "summary": "Investor onboarding, wallet whitelisting, subscription, mint, holding, redemption, and reconciliation.",
+    "keywords": [
+      "simulation",
+      "mas-project-guardian",
+      "chainlink-dta",
+      "ubs-tokenize",
+      "ctl-investor-eligibility",
+      "ctl-investor-eligibility",
+      "ctl-nav-governance",
+      "ctl-nav-governance",
+      "ctl-reconciliation",
+      "ctl-reconciliation",
+      "ctl-reconciliation",
+      "ctl-incident-response"
+    ]
+  },
+  {
+    "id": "tokenized-bond-issuance",
+    "type": "simulation",
+    "label": "Tokenized bond issuance, distribution, settlement, and servicing",
+    "href": "/simulate/tokenized-bond-issuance/",
+    "summary": "Mandate to maturity with legal wrapper, issuance, DvP, servicing, and transfer restriction logic.",
+    "keywords": [
+      "simulation",
+      "boe-dss",
+      "sdx-official",
+      "ubs-tokenize",
+      "ctl-legal-perimeter",
+      "ctl-legal-perimeter",
+      "ctl-legal-perimeter",
+      "ctl-investor-eligibility",
+      "ctl-liquidity-prefunding",
+      "ctl-reconciliation",
+      "ctl-reconciliation",
+      "ctl-incident-response"
+    ]
+  },
+  {
+    "id": "repo-collateral-mobilization",
+    "type": "simulation",
+    "label": "Repo and collateral mobilization with digital assets",
+    "href": "/simulate/repo-collateral-mobilization/",
+    "summary": "Eligibility, valuation, pledge or transfer, margining, substitution, and unwind with digital assets or tokenized securities.",
+    "keywords": [
+      "simulation",
+      "sdx-official",
+      "basel-crypto",
+      "ctl-concentration",
+      "ctl-legal-perimeter",
+      "ctl-liquidity-prefunding",
+      "ctl-custody-segregation",
+      "ctl-reconciliation",
+      "ctl-liquidity-prefunding",
+      "ctl-concentration",
+      "ctl-incident-response"
+    ]
+  },
+  {
+    "id": "tokenized-cash-payments",
+    "type": "simulation",
+    "label": "Tokenized cash, stablecoin, and tokenized deposit treasury flows",
+    "href": "/simulate/tokenized-cash-payments/",
+    "summary": "Treasury and cross-border payments using different tokenized cash models and rail assumptions.",
+    "keywords": [
+      "simulation",
+      "mas-stablecoin",
+      "hkma-stablecoin",
+      "kinexys-digital-payments",
+      "ctl-liquidity-prefunding",
+      "ctl-legal-perimeter",
+      "ctl-liquidity-prefunding",
+      "ctl-travel-rule",
+      "ctl-reconciliation",
+      "ctl-reconciliation",
+      "ctl-concentration",
+      "ctl-incident-response"
+    ]
+  },
+  {
+    "id": "structured-product-lifecycle",
+    "type": "simulation",
+    "label": "Structured product lifecycle",
+    "href": "/simulate/structured-product-lifecycle/",
+    "summary": "Idea framing, payoff design, distribution fit, issuance, servicing, and unwind for digital-asset-linked or tokenized structures.",
+    "keywords": [
+      "simulation",
+      "ubs-tokenize",
+      "fca-future-crypto",
+      "sec-crypto-2026",
+      "ctl-suitability",
+      "ctl-legal-perimeter",
+      "ctl-suitability",
+      "ctl-legal-perimeter",
+      "ctl-reconciliation",
+      "ctl-incident-response",
+      "ctl-reconciliation"
+    ]
+  },
+  {
+    "id": "finma-guidance-01-2026",
+    "type": "source",
+    "label": "FINMA Guidance 01/2026 on custody of crypto-based assets",
+    "href": "/sources/#finma-guidance-01-2026",
+    "summary": "Primary Swiss custody guidance for crypto-based assets, including safeguarding and delegation concerns.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "esma-mica",
+    "type": "source",
+    "label": "ESMA MiCA hub",
+    "href": "/sources/#esma-mica",
+    "summary": "Entry point for MiCA materials, registers, and supporting ESMA publications.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "eu-dora",
+    "type": "source",
+    "label": "Digital Operational Resilience Act",
+    "href": "/sources/#eu-dora",
+    "summary": "EU operational resilience regulation that materially shapes incident, outsourcing, and resilience expectations.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "boe-dss",
+    "type": "source",
+    "label": "Bank of England Digital Securities Sandbox",
+    "href": "/sources/#boe-dss",
+    "summary": "Official description of the UK Digital Securities Sandbox and its permitted scope.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "fca-future-crypto",
+    "type": "source",
+    "label": "FCA new regime for cryptoasset regulation",
+    "href": "/sources/#fca-future-crypto",
+    "summary": "UK forward-looking regime material that signals where legal review is required before launch assumptions are made.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "mas-project-guardian",
+    "type": "source",
+    "label": "Project Guardian",
+    "href": "/sources/#mas-project-guardian",
+    "summary": "Singapore’s main official hub for tokenisation workstreams and institutional use-case references.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "mas-stablecoin",
+    "type": "source",
+    "label": "MAS finalises stablecoin regulatory framework",
+    "href": "/sources/#mas-stablecoin",
+    "summary": "Official statement of Singapore’s stablecoin framework and core expectations.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "sfc-aspire",
+    "type": "source",
+    "label": "SFC ASPIRe roadmap",
+    "href": "/sources/#sfc-aspire",
+    "summary": "Hong Kong roadmap source used for market posture and confidence framing.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "hkma-stablecoin",
+    "type": "source",
+    "label": "HKMA stablecoin issuers regime",
+    "href": "/sources/#hkma-stablecoin",
+    "summary": "Official stablecoin issuer regime material for Hong Kong.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "sec-crypto-2026",
+    "type": "source",
+    "label": "SEC application of federal securities laws to crypto assets",
+    "href": "/sources/#sec-crypto-2026",
+    "summary": "Useful directional source, but US launch decisions still require specialist legal review.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "adgm-frt",
+    "type": "source",
+    "label": "ADGM fiat-referenced token framework",
+    "href": "/sources/#adgm-frt",
+    "summary": "Regional reference point for regulated activities involving fiat-referenced tokens.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "japan-fsa-2025",
+    "type": "source",
+    "label": "FSA paper on regulatory systems related to cryptoassets",
+    "href": "/sources/#japan-fsa-2025",
+    "summary": "High-level Japanese framework source for cautious summary coverage.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "basel-crypto",
+    "type": "source",
+    "label": "Basel prudential treatment of cryptoasset exposures",
+    "href": "/sources/#basel-crypto",
+    "summary": "Global prudential anchor for exposure, capital, and risk framing.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "nist-csf-2",
+    "type": "source",
+    "label": "NIST Cybersecurity Framework 2.0",
+    "href": "/sources/#nist-csf-2",
+    "summary": "Cross-cutting cyber and resilience anchor for the control library.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "fatf-vasp-2025",
+    "type": "source",
+    "label": "FATF targeted update on virtual assets and VASPs",
+    "href": "/sources/#fatf-vasp-2025",
+    "summary": "Global AML and Travel Rule anchor for transfer and screening controls.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "ubs-tokenize",
+    "type": "source",
+    "label": "UBS Tokenize",
+    "href": "/sources/#ubs-tokenize",
+    "summary": "Market exemplar for bank-led tokenisation patterns without implying endorsement.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "chainlink-dta",
+    "type": "source",
+    "label": "Chainlink DTA technical standard",
+    "href": "/sources/#chainlink-dta",
+    "summary": "Vendor-origin technical material that helps explain tokenized fund synchronization patterns.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "kinexys-digital-payments",
+    "type": "source",
+    "label": "Kinexys Digital Payments",
+    "href": "/sources/#kinexys-digital-payments",
+    "summary": "Bank-run settlement rail reference point for treasury and payments comparisons.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "sdx-official",
+    "type": "source",
+    "label": "SDX official site",
+    "href": "/sources/#sdx-official",
+    "summary": "Primary market reference for a regulated DLT venue and settlement environment.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "digift-official",
+    "type": "source",
+    "label": "DigiFT official site",
+    "href": "/sources/#digift-official",
+    "summary": "Reference venue pattern for tokenized funds and institutional access.",
+    "keywords": [
+      "source"
+    ]
+  },
+  {
+    "id": "dvp",
+    "type": "glossary",
+    "label": "Delivery versus Payment (DvP)",
+    "href": "/learn/#glossary-dvp",
+    "summary": "A settlement pattern that exchanges asset and cash together.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "pvp",
+    "type": "glossary",
+    "label": "Payment versus Payment (PvP)",
+    "href": "/learn/#glossary-pvp",
+    "summary": "A settlement pattern exchanging one payment leg for another.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "finality",
+    "type": "glossary",
+    "label": "Finality",
+    "href": "/learn/#glossary-finality",
+    "summary": "The point at which a transfer is treated as irreversible for operational purposes.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "travel-rule",
+    "type": "glossary",
+    "label": "Travel Rule",
+    "href": "/learn/#glossary-travel-rule",
+    "summary": "Information-sharing expectations for certain virtual asset transfers.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "stablecoin",
+    "type": "glossary",
+    "label": "Stablecoin",
+    "href": "/learn/#glossary-stablecoin",
+    "summary": "A token designed to reference a fiat currency or another value source.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "tokenized-deposit",
+    "type": "glossary",
+    "label": "Tokenized Deposit",
+    "href": "/learn/#glossary-tokenized-deposit",
+    "summary": "A tokenized representation of a bank deposit or commercial-bank-money claim.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "emt",
+    "type": "glossary",
+    "label": "E-money Token (EMT)",
+    "href": "/learn/#glossary-emt",
+    "summary": "A MiCA-defined token referencing a single official currency.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "casp",
+    "type": "glossary",
+    "label": "Crypto-Asset Service Provider (CASP)",
+    "href": "/learn/#glossary-casp",
+    "summary": "A regulated role under MiCA for certain crypto-asset services.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "frt",
+    "type": "glossary",
+    "label": "Fiat-Referenced Token (FRT)",
+    "href": "/learn/#glossary-frt",
+    "summary": "A token referencing one or more fiat currencies.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "whitelisting",
+    "type": "glossary",
+    "label": "Wallet Whitelisting",
+    "href": "/learn/#glossary-whitelisting",
+    "summary": "A process that limits transfers to approved wallets or identities.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "nav",
+    "type": "glossary",
+    "label": "Net Asset Value (NAV)",
+    "href": "/learn/#glossary-nav",
+    "summary": "A per-unit valuation measure used by funds.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "segregation",
+    "type": "glossary",
+    "label": "Segregation",
+    "href": "/learn/#glossary-segregation",
+    "summary": "Operational and legal separation of client assets from firm assets.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "reconciliation",
+    "type": "glossary",
+    "label": "Reconciliation",
+    "href": "/learn/#glossary-reconciliation",
+    "summary": "The process of matching records across systems.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "dora",
+    "type": "glossary",
+    "label": "DORA",
+    "href": "/learn/#glossary-dora",
+    "summary": "EU Digital Operational Resilience Act.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "prudential",
+    "type": "glossary",
+    "label": "Prudential Treatment",
+    "href": "/learn/#glossary-prudential",
+    "summary": "How exposures are treated for capital and risk purposes.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "cold-storage",
+    "type": "glossary",
+    "label": "Cold Storage",
+    "href": "/learn/#glossary-cold-storage",
+    "summary": "A custody model that keeps signing material offline.",
+    "keywords": [
+      "glossary"
+    ]
+  },
+  {
+    "id": "wealth-management",
+    "type": "journey",
+    "label": "Digital assets for wealth management",
+    "href": "/start/",
+    "summary": "Start with client-ready explanations, then layer on custody, suitability, and family governance.",
+    "keywords": [
+      "journey"
+    ]
+  },
+  {
+    "id": "tokenized-funds",
+    "type": "journey",
+    "label": "How tokenized funds work",
+    "href": "/start/",
+    "summary": "Walk through tokenized fund distribution, controlled transferability, and reconciliation.",
+    "keywords": [
+      "journey",
+      "ctl-investor-eligibility",
+      "ctl-nav-governance",
+      "ctl-reconciliation",
+      "tokenized-fund-subscription",
+      "tokenized-mmf-distribution",
+      "nav",
+      "whitelisting",
+      "reconciliation",
+      "mas-project-guardian",
+      "ubs-tokenize",
+      "chainlink-dta"
+    ]
+  },
+  {
+    "id": "tokenized-bonds",
+    "type": "journey",
+    "label": "How tokenized bonds are issued and serviced",
+    "href": "/start/",
+    "summary": "Cover issuance, DvP, servicing, and sandbox or venue considerations.",
+    "keywords": [
+      "journey",
+      "ctl-legal-perimeter",
+      "ctl-corporate-actions",
+      "ctl-reconciliation",
+      "tokenized-bond-issuance",
+      "regulated-dlt-bond-issuance",
+      "dvp",
+      "finality",
+      "segregation",
+      "boe-dss",
+      "sdx-official",
+      "ubs-tokenize"
+    ]
+  },
+  {
+    "id": "tokenized-cash",
+    "type": "journey",
+    "label": "Settlement asset choices",
+    "href": "/start/",
+    "summary": "Compare stablecoins, tokenized deposits, and bank rails with control overlays.",
+    "keywords": [
+      "journey",
+      "ctl-liquidity-prefunding",
+      "ctl-screening",
+      "ctl-concentration",
+      "tokenized-cash-payments",
+      "tokenized-cash-settlement",
+      "stablecoin",
+      "tokenized-deposit",
+      "pvp",
+      "mas-stablecoin",
+      "hkma-stablecoin",
+      "esma-mica",
+      "kinexys-digital-payments"
+    ]
+  },
+  {
+    "id": "2026-03-19-foundation",
+    "type": "release",
+    "label": "Foundation release",
+    "href": "/releases/",
+    "summary": "Initial release candidate covering the static shell, typed content model, rules, six deep simulations, workspace, strategy workbench, and business model simulator.",
+    "keywords": [
+      "release"
+    ]
+  },
+  {
+    "id": "2026-03-19-governance",
+    "type": "release",
+    "label": "Governance and trust improvements",
+    "href": "/releases/",
+    "summary": "Added stale-state visibility, release history, workspace migrations, and CI verification gates.",
+    "keywords": [
+      "release"
+    ]
+  }
+]

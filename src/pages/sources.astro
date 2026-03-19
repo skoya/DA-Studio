@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import TrustMeta from '@/components/common/TrustMeta.astro';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+
+const sources = await getCollection('sources');
+---
+
+<ShellLayout title="Sources | Digital Asset Studio">
+  <section class="section">
+    <p class="eyebrow">Sources and freshness</p>
+    <h1>Official sources, review dates, confidence labels, and stale policy</h1>
+    <div class="grid two-col">
+      {sources.map((source) => (
+        <article class="card list-card" id={source.id}>
+          <span class="pill">{source.data.organization}</span>
+          <h3><a href={source.data.url}>{source.data.title}</a></h3>
+          <p>{source.data.summary}</p>
+          <TrustMeta source={source.data} />
+        </article>
+      ))}
+    </div>
+  </section>
+</ShellLayout>

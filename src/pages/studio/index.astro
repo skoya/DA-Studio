@@ -1,0 +1,28 @@
+---
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { withBase } from '@/lib/routes';
+---
+
+<ShellLayout title="Studio | Digital Asset Studio">
+  <section class="section">
+    <p class="eyebrow">Strategy and venture workbench</p>
+    <h1>Move from rough idea to structured decision pack</h1>
+    <div class="grid three-col">
+      <article class="card list-card">
+        <h3>Idea framing</h3>
+        <p>Capture the problem, target segment, market, and closest known pattern.</p>
+        <a href={withBase('/studio/idea/')}>Open idea framing</a>
+      </article>
+      <article class="card list-card">
+        <h3>Strategy views</h3>
+        <p>Run PESTEL, Five Forces, and FVD scoring with exportable SVG analysis.</p>
+        <a href={withBase('/studio/strategy/pestel/')}>Open strategy</a>
+      </article>
+      <article class="card list-card">
+        <h3>Business model and decision pack</h3>
+        <p>Pressure-test economics and export a concise decision pack.</p>
+        <a href={withBase('/studio/business-model/')}>Open business model</a>
+      </article>
+    </div>
+  </section>
+</ShellLayout>

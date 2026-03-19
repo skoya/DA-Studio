@@ -1,0 +1,118 @@
+---
+import { getCollection } from 'astro:content';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+import { controls, patterns, simulations, sourceCards } from '@/lib/catalog';
+import { withBase } from '@/lib/routes';
+
+export async function getStaticPaths() {
+  const concepts = await getCollection('concepts');
+  return concepts.map((concept) => ({
+    params: { slug: concept.id },
+    props: { concept: concept.data, slug: concept.id },
+  }));
+}
+
+const { concept } = Astro.props;
+const relatedControls = controls.filter((control) => concept.relatedControls.includes(control.id));
+const relatedSimulations = simulations.filter((simulation) => concept.relatedSimulations.includes(simulation.id));
+const relatedPatterns = patterns.filter((pattern) => concept.relatedPatterns.includes(pattern.id));
+const sources = sourceCards.filter((source) => concept.sourceIds.includes(source.id));
+---
+
+<ShellLayout title={`${concept.title} | Learn`}>
+  <section class="section split">
+    <div class="surface card">
+      <p class="eyebrow">Concept</p>
+      <h1>{concept.title}</h1>
+      <p>{concept.summary}</p>
+      <div class="meta-row">
+        <span class="pill">Reviewed {concept.lastReviewed}</span>
+        <span class="pill">Owner {concept.reviewOwner}</span>
+      </div>
+
+      <details open>
+        <summary>Plain English</summary>
+        <p>{concept.plain}</p>
+      </details>
+      <details>
+        <summary>Practitioner</summary>
+        <p>{concept.practitioner}</p>
+      </details>
+      <details>
+        <summary>Expert</summary>
+        <p>{concept.expert}</p>
+      </details>
+
+      <div class="grid two-col section">
+        <article class="card">
+          <strong>Why it matters</strong>
+          <ul>
+            {concept.whyItMatters.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </article>
+        <article class="card">
+          <strong>Common misconceptions</strong>
+          <ul>
+            {concept.misconceptions.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="surface card">
+        <strong>Client impacts</strong>
+        <div class="tableish">
+          {Object.entries(concept.clientImpacts).map(([segment, note]) => (
+            <div class="row">
+              <strong>{segment}</strong>
+              <p>{note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section grid two-col">
+    <article class="card">
+      <strong>Related simulations</strong>
+      <ul>
+        {relatedSimulations.map((simulation) => (
+          <li><a href={withBase(`/simulate/${simulation.id}/`)}>{simulation.title}</a></li>
+        ))}
+      </ul>
+    </article>
+    <article class="card">
+      <strong>Related patterns</strong>
+      <ul>
+        {relatedPatterns.map((pattern) => (
+          <li>{pattern.title}</li>
+        ))}
+      </ul>
+    </article>
+  </section>
+
+  <section class="section grid two-col">
+    <article class="card">
+      <strong>Control hooks</strong>
+      <ul>
+        {relatedControls.map((control) => (
+          <li><a href={withBase(`/controls/${control.id}/`)}>{control.title}</a></li>
+        ))}
+      </ul>
+    </article>
+    <article class="card">
+      <strong>Source cards</strong>
+      <ul>
+        {sources.map((source) => (
+          <li><a href={source.url}>{source.title}</a></li>
+        ))}
+      </ul>
+    </article>
+  </section>
+</ShellLayout>

@@ -1,0 +1,10 @@
+---
+import WorkspaceManager from '@/components/react/WorkspaceManager';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+---
+
+<ShellLayout title="Workspace | Digital Asset Studio">
+  <section class="section">
+    <WorkspaceManager client:load />
+  </section>
+</ShellLayout>

@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import ShellLayout from '@/layouts/ShellLayout.astro';
+
+const releases = await getCollection('release-notes');
+const migrations = await getCollection('migrations');
+---
+
+<ShellLayout title="Releases | Digital Asset Studio">
+  <section class="section">
+    <p class="eyebrow">Releases</p>
+    <h1>Release notes and upgrade posture</h1>
+    <div class="grid two-col">
+      {releases.map((release) => (
+        <article class="card list-card">
+          <span class="pill">{release.data.releasedAt}</span>
+          <h3>{release.data.title}</h3>
+          <p>{release.data.summary}</p>
+          <ul>{release.data.highlights.map((item) => <li>{item}</li>)}</ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Upgrade packs</p>
+    <div class="grid two-col">
+      {migrations.map((item) => (
+        <article class="card">
+          <h3>{item.id}</h3>
+          <p>Version {item.data.version} · Released {item.data.releasedAt}</p>
+          <ul>{item.data.changes.map((change) => <li>{change}</li>)}</ul>
+        </article>
+      ))}
+    </div>
+  </section>
+</ShellLayout>

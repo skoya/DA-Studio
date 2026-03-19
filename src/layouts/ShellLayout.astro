@@ -1,0 +1,36 @@
+---
+import Footer from '@/components/layout/Footer.astro';
+import TopNav from '@/components/layout/TopNav.astro';
+import ContextBar from '@/components/react/ContextBar';
+import { APP_DESCRIPTION, APP_TITLE } from '@/lib/site';
+import '@/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = APP_TITLE, description = APP_DESCRIPTION } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <TopNav />
+      </header>
+      <main id="main-content">
+        <ContextBar client:load />
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
